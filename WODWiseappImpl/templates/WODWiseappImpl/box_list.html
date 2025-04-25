@@ -1,0 +1,30 @@
+{% extends 'WODWiseappImpl/base.html' %}
+{% load static %}
+
+{% block title %}Box List{% endblock %}
+
+{% block header %}Our Boxes{% endblock %}
+
+{% block content %}
+<a href="{% url 'index' %}" class="button back-button">Back to Home</a>
+<div class="box-list">
+    {% if boxes %}
+        {% for box in boxes %}
+        <div class="box-card">
+            <h3>{{ box.name }}</h3>
+            <p><strong>Location:</strong> {{ box.location }}</p>
+            <p><strong>Price:</strong> ${{ box.price_per_month }}/month</p>
+            {% if box.website %}
+            <p><strong>Website:</strong> <a href="{{ box.website }}" target="_blank">{{ box.website }}</a></p>
+            {% endif %}
+            {% if box.description %}
+            <p><strong>Description:</strong> {{ box.description }}</p>
+            {% endif %}
+            <p><strong>Open Gym:</strong> {% if box.open_gym %}Yes{% else %}No{% endif %}</p>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>No boxes available yet.</p>
+    {% endif %}
+</div>
+{% endblock %} 

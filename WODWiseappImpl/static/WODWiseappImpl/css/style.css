@@ -1,0 +1,94 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.back-button {
+    background-color: #666;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+input[type="text"], 
+input[type="url"], 
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Box list styles */
+.box-list {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.box-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+}
+
+/* Message styles */
+.messages {
+    margin-bottom: 20px;
+}
+
+.message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.success {
+    background-color: #dff0d8;
+    color: #3c763d;
+}
+
+.error {
+    background-color: #f2dede;
+    color: #a94442;
+} 

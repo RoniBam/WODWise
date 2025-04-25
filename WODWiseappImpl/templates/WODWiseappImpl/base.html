@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WODWise - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'WODWiseappImpl/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>{% block header %}{% endblock %}</h1>
+        <div class="content">
+            {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                <div class="message {{ message.tags }}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</body>
+</html> 

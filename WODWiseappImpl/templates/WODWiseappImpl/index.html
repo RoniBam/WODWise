@@ -1,35 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>WODWise - Home</title>
-    <style>
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-        }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        h1 {
-            color: #333;
-            margin-bottom: 30px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Welcome to WODWise</h1>
-        <p>Choose an option below:</p>
-        <a href="{% url 'box_create_form' %}" class="button">Add New Box</a>
-        <a href="{% url 'box_list' %}" class="button">View All Boxes</a>
-    </div>
-</body>
-</html>
+{% extends 'WODWiseappImpl/base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block header %}Welcome to WODWise{% endblock %}
+
+{% block content %}
+<p>Choose an option below:</p>
+<a href="{% url 'box_create_form' %}" class="button">Add New Box</a>
+<a href="{% url 'box_list' %}" class="button">View All Boxes</a>
+{% endblock %}
