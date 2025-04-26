@@ -11,6 +11,13 @@ class Box(models.Model):
     description = models.TextField(blank=True)
     open_gym = models.BooleanField(default=False)
 
+    @property
+    def average_rating(self):
+        reviews = self.reviews.all()
+        if reviews.exists():
+            return round(sum([r.rating for r in reviews]) / reviews.count(), 2)
+        return None
+
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     experience_level = models.CharField(

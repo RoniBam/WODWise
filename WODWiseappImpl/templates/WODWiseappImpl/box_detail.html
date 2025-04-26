@@ -1,0 +1,29 @@
+{% extends 'WODWiseappImpl/base.html' %}
+{% block title %}{{ box.name }}{% endblock %}
+{% block header %}{{ box.name }}{% endblock %}
+{% block content %}
+<p><strong>Location:</strong> {{ box.location }}</p>
+<p><strong>Price:</strong> ${{ box.price_per_month }}/month</p>
+{% if box.website %}
+<p><strong>Website:</strong> <a href="{{ box.website }}" target="_blank">{{ box.website }}</a></p>
+{% endif %}
+{% if box.description %}
+<p><strong>Description:</strong> {{ box.description }}</p>
+{% endif %}
+<p><strong>Open Gym:</strong> {% if box.open_gym %}Yes{% else %}No{% endif %}</p>
+
+<a href="{% url 'WODWiseappImpl:add_review' box.id %}" class="button">Leave a Review</a>
+
+<h2>Reviews</h2>
+{% if reviews %}
+    {% for review in reviews %}
+        <div class="box-card">
+            <strong>Rating:</strong> {{ review.rating }}<br>
+            <strong>Comment:</strong> {{ review.comment }}<br>
+            <em>{{ review.created_at }}</em>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No reviews yet.</p>
+{% endif %}
+{% endblock %} 

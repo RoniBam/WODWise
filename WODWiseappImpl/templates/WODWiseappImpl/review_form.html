@@ -1,0 +1,18 @@
+{% extends 'WODWiseappImpl/base.html' %}
+{% block title %}Leave a Review{% endblock %}
+{% block header %}Leave a Review for {{ box.name }}{% endblock %}
+{% block content %}
+<a href="{% url 'WODWiseappImpl:box_detail' box.id %}" class="button back-button">Back to Box</a>
+<form method="POST" action="{% url 'WODWiseappImpl:add_review' box.id %}">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="rating">Rating (1-5):</label>
+        <input type="number" id="rating" name="rating" min="1" max="5" required>
+    </div>
+    <div class="form-group">
+        <label for="comment">Comment:</label>
+        <textarea id="comment" name="comment" rows="4" required></textarea>
+    </div>
+    <input type="submit" value="Submit Review">
+</form>
+{% endblock %} 

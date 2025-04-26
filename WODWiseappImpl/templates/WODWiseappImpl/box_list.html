@@ -6,12 +6,12 @@
 {% block header %}Our Boxes{% endblock %}
 
 {% block content %}
-<a href="{% url 'index' %}" class="button back-button">Back to Home</a>
+<a href="{% url 'WODWiseappImpl:index' %}" class="button back-button">Back to Home</a>
 <div class="box-list">
     {% if boxes %}
         {% for box in boxes %}
         <div class="box-card">
-            <h3>{{ box.name }}</h3>
+            <h3><a href="{% url 'WODWiseappImpl:box_detail' box.id %}">{{ box.name }}</a></h3>
             <p><strong>Location:</strong> {{ box.location }}</p>
             <p><strong>Price:</strong> ${{ box.price_per_month }}/month</p>
             {% if box.website %}
